@@ -1,7 +1,7 @@
 # Echo Server
 
 A *very* brain dead webserver written in Python used for testing. All it does is send
-back to the client a few details around client address, path and headers.
+back to the client a few details around client address, path and headers etc.
 
 Arguments are:
 > ```
