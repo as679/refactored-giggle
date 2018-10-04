@@ -14,14 +14,16 @@ class echoHandler(BaseHTTPServer.BaseHTTPRequestHandler):
         s.send_header("Content-type", "text/html")
         s.end_headers()
         s.wfile.write("<html><head><title>Echo Server</title></head><body><pre>\n")
+        s.wfile.write("Server: %s:%s\n" % (s.server.server_address[0], s.server.server_address[1]))
         s.wfile.write("Client: %s:%s\n" % (s.client_address[0], s.client_address[1]))
         s.wfile.write("Version: %s\n" % s.request_version)
-        s.wfile.write("Path: %s\n" % s.path)
-        s.wfile.write("Headers: %s" % s.headers)
+        s.wfile.write("Path: %s\n" % data[0])
+        s.wfile.write("Headers:\n%s" % s.headers)
         s.wfile.write("</pre></body></html>")
 
 
 def main():
+    # This is a change :)
     parser = argparse.ArgumentParser()
     parser.add_argument("--listen", type=int, default=9000)
     parser.add_argument("--servername", type=str, default='')
