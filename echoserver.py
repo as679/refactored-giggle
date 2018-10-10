@@ -23,7 +23,6 @@ class echoHandler(BaseHTTPServer.BaseHTTPRequestHandler):
 
 
 def main():
-    # This is a change :)
     parser = argparse.ArgumentParser()
     parser.add_argument("--listen", type=int, default=9000)
     parser.add_argument("--servername", type=str, default='')
